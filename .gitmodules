@@ -1,0 +1,3 @@
+[submodule "yasmp"]
+	path = yasmp
+	url = https://github.com/sgr98/YASMP.git
