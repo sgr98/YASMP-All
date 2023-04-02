@@ -2,18 +2,27 @@ export const USERS = [
     {
         user_name: 'User1',
         port: '4001',
+        isGroup: false,
     },
     {
         user_name: 'User2',
         port: '4002',
+        isGroup: false,
     },
     {
         user_name: 'User3',
         port: '4003',
+        isGroup: false,
     },
     {
         user_name: 'User4',
         port: '4004',
+        isGroup: false,
+    },
+    {
+        user_name: 'Group_Chat',
+        port: ['4001', '4002', '4003', '4004'],
+        isGroup: true,
     },
 ];
 

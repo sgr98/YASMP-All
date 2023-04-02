@@ -33,12 +33,13 @@ const containsUser = (users, user_name) => {
     });
 };
 
-const createUser = (user_name, port_num) => {
+const createUser = (user_name, port_num, isGroup) => {
     let user = {
         id: uuidv4(),
         name: user_name,
         port: port_num,
         ip: '0.0.0.0',
+        isGroup: isGroup,
     };
     return user;
 };
@@ -47,9 +48,9 @@ export const addUsers = async (users, path) => {
     let objUsers = await readUsers(path);
     // console.log('objUsers', objUsers);
     users.forEach((user) => {
-        const { user_name, port } = user;
+        const { user_name, port, isGroup } = user;
         if (!containsUser(objUsers, user_name)) {
-            const objUser = createUser(user_name, port);
+            const objUser = createUser(user_name, port, isGroup);
             objUsers.push(objUser);
         }
     });

@@ -29,16 +29,18 @@ const createMetaSpace = async (type='') => {
 
         console.log('USERS CREATION STARTED');
         USERS.forEach(async (val, ind, array) => {
-            const { user_name } = val;
-            console.log('USER:', user_name);
-            const paths = {
-                regPath: registry_path,
-                dirPath: SAVE_DIR_USER,
-            };
+            if (!val.isGroup) {
+                const { user_name } = val;
+                console.log('USER:', user_name);
+                const paths = {
+                    regPath: registry_path,
+                    dirPath: SAVE_DIR_USER,
+                };
 
-            const dirPath = SAVE_DIR_USER + user_name;
-            await createDir(dirPath);
-            await addUserSpace(user_name, paths);
+                const dirPath = SAVE_DIR_USER + user_name;
+                await createDir(dirPath);
+                await addUserSpace(user_name, paths);
+            }
         });
         console.log('USERS CREATED');
 

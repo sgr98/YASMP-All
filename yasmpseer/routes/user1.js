@@ -76,7 +76,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { func, params } = req.body;
-        const message = params.message;
+        const message = params.message;     // TODO: Put Message into if block
 
         let response;
         if (func === 'SEND_MESSAGE') {

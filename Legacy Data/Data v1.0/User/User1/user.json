@@ -1,0 +1,168 @@
+{
+  "about": {
+    "id": "e5f2d93a-afc5-4e66-814b-b779dae92fe7",
+    "name": "User1",
+    "port": "4001",
+    "ip": "0.0.0.0"
+  },
+  "contacts": [
+    {
+      "id": "184d6d4c-d1fb-4811-b1d3-955276a56858",
+      "name": "User2",
+      "port": "4002",
+      "ip": "0.0.0.0"
+    },
+    {
+      "id": "f62eec85-eb2d-4473-ac70-6701944f8fa0",
+      "name": "User3",
+      "port": "4003",
+      "ip": "0.0.0.0"
+    },
+    {
+      "id": "48755487-0667-4faa-b6de-0eacf7735f9c",
+      "name": "User4",
+      "port": "4004",
+      "ip": "0.0.0.0"
+    }
+  ],
+  "conversations": {
+    "User2": [
+      {
+        "message_id": "61d83ffa-946e-4e1a-a94b-9f7611a01e95",
+        "from": "User1",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "Hello"
+        },
+        "datetime": "2023-03-06T08:30:35.984Z"
+      },
+      {
+        "message_id": "d50b01b9-917f-476b-a72d-039d3d4d3835",
+        "from": "User2",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "Hi"
+        },
+        "datetime": "2023-03-06T18:53:13.624Z"
+      },
+      {
+        "message_id": "b8714433-2e7a-4d79-954e-74802f26fe5b",
+        "from": "User1",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "How are you?"
+        },
+        "datetime": "2023-03-28T16:38:49.731Z"
+      },
+      {
+        "message_id": "f2175be2-6992-4a0d-b40a-252f98d363da",
+        "from": "User2",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "I am fine"
+        },
+        "datetime": "2023-03-28T16:39:03.187Z"
+      },
+      {
+        "message_id": "13e764d8-94fd-4a60-aa16-cb0e14583361",
+        "from": "User1",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "good"
+        },
+        "datetime": "2023-03-28T20:32:20.817Z"
+      },
+      {
+        "message_id": "b553bb61-0cf0-4600-93cd-0e50334c6d91",
+        "from": "User1",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "wby"
+        },
+        "datetime": "2023-03-28T20:32:56.370Z"
+      },
+      {
+        "message_id": "b96385d9-3f37-43a7-8194-2ce7ebe5e1cc",
+        "from": "User2",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "I am fine as well"
+        },
+        "datetime": "2023-03-28T20:33:19.981Z"
+      },
+      {
+        "message_id": "028e6601-4af1-4eb4-8977-24d9df9622e4",
+        "from": "User1",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "Hello"
+        },
+        "datetime": "2023-03-28T20:37:08.069Z"
+      },
+      {
+        "message_id": "2474118d-0742-438b-9b0b-537c04b847da",
+        "from": "User2",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "Not you"
+        },
+        "datetime": "2023-03-28T20:37:15.028Z"
+      }
+    ],
+    "User3": [
+      {
+        "message_id": "7136fc5b-c66e-4190-94a7-0efb8018818e",
+        "from": "User1",
+        "to": "User3",
+        "data": {
+          "type": "string",
+          "content": "Hello 3"
+        },
+        "datetime": "2023-03-06T08:30:47.493Z"
+      }
+    ],
+    "User4": [
+      {
+        "message_id": "5a2632e5-4070-465c-931a-de47ed274b3e",
+        "from": "User1",
+        "to": "User4",
+        "data": {
+          "type": "string",
+          "content": "Hello User 4"
+        },
+        "datetime": "2023-03-06T09:15:57.913Z"
+      },
+      {
+        "message_id": "9a6ef86d-9c2f-4ca6-8f6e-0e7ffec82c8f",
+        "from": "User1",
+        "to": "User4",
+        "data": {
+          "type": "object",
+          "content": {
+            "a": 5
+          }
+        },
+        "datetime": "2023-03-06T09:16:27.374Z"
+      },
+      {
+        "message_id": "d441c4dc-cd5b-4659-9ffa-e3479207c225",
+        "from": "User4",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "Thank you"
+        },
+        "datetime": "2023-03-06T09:16:43.569Z"
+      }
+    ]
+  }
+}

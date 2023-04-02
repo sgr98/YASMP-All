@@ -1,0 +1,87 @@
+{
+  "about": {
+    "id": "48755487-0667-4faa-b6de-0eacf7735f9c",
+    "name": "User4",
+    "port": "4004",
+    "ip": "0.0.0.0"
+  },
+  "contacts": [
+    {
+      "id": "e5f2d93a-afc5-4e66-814b-b779dae92fe7",
+      "name": "User1",
+      "port": "4001",
+      "ip": "0.0.0.0"
+    },
+    {
+      "id": "184d6d4c-d1fb-4811-b1d3-955276a56858",
+      "name": "User2",
+      "port": "4002",
+      "ip": "0.0.0.0"
+    },
+    {
+      "id": "f62eec85-eb2d-4473-ac70-6701944f8fa0",
+      "name": "User3",
+      "port": "4003",
+      "ip": "0.0.0.0"
+    }
+  ],
+  "conversations": {
+    "User1": [
+      {
+        "message_id": "5a2632e5-4070-465c-931a-de47ed274b3e",
+        "from": "User1",
+        "to": "User4",
+        "data": {
+          "type": "string",
+          "content": "Hello User 4"
+        },
+        "datetime": "2023-03-06T09:15:57.913Z"
+      },
+      {
+        "message_id": "9a6ef86d-9c2f-4ca6-8f6e-0e7ffec82c8f",
+        "from": "User1",
+        "to": "User4",
+        "data": {
+          "type": "object",
+          "content": {
+            "a": 5
+          }
+        },
+        "datetime": "2023-03-06T09:16:27.374Z"
+      },
+      {
+        "message_id": "d441c4dc-cd5b-4659-9ffa-e3479207c225",
+        "from": "User4",
+        "to": "User1",
+        "data": {
+          "type": "string",
+          "content": "Thank you"
+        },
+        "datetime": "2023-03-06T09:16:43.569Z"
+      }
+    ],
+    "User2": [
+      {
+        "message_id": "ba8f3bf9-b373-4525-a6c8-21d235804399",
+        "from": "User2",
+        "to": "User4",
+        "data": {
+          "type": "string",
+          "content": "Hellllloooo"
+        },
+        "datetime": "2023-03-28T20:33:58.990Z"
+      },
+      {
+        "message_id": "ca93f9b7-ccbc-442c-8ff9-b76809dde4be",
+        "from": "User4",
+        "to": "User2",
+        "data": {
+          "type": "string",
+          "content": "Hi"
+        },
+        "datetime": "2023-03-28T20:34:04.083Z"
+      }
+    ],
+    "User3": []
+  }
+}

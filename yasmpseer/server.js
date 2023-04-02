@@ -4,25 +4,26 @@ const { getPortIndex, getJsonPort, getSendURL } = require('./utils');
 
 const app = express();
 
-const corsOptions = {
-    origin: '*',
-    'Access-Control-Allow-Origin': 'http://localhost:4001',
-    'Access-Control-Allow-Credentials': 'true',
-    optionsSuccessStatus: 200,
-    credentials: true, //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: [
-        'Content-Type',
-        'Origin',
-        'X-Requested-With',
-        'Accept',
-        'x-client-key',
-        'x-client-token',
-        'x-client-secret',
-        'Authorization',
-    ],
-};
+// TODO: Remove cors
+// const corsOptions = {
+//     origin: '*',
+//     'Access-Control-Allow-Origin': 'http://localhost:4001',
+//     'Access-Control-Allow-Credentials': 'true',
+//     optionsSuccessStatus: 200,
+//     credentials: true, //access-control-allow-credentials:true
+//     optionSuccessStatus: 200,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+//     allowedHeaders: [
+//         'Content-Type',
+//         'Origin',
+//         'X-Requested-With',
+//         'Accept',
+//         'x-client-key',
+//         'x-client-token',
+//         'x-client-secret',
+//         'Authorization',
+//     ],
+// };
 
 // Express Parser Middleware
 app.use(express.json({ extended: true }));
