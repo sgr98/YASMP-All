@@ -31,6 +31,8 @@ const getData = async () => {
 const postDataRPC = async (message) => {
     const { from, to, isGroup } = message;
 
+    message.datetime_receive = new Date();
+
     const userSpace = await getData();
     const userConversations = userSpace.conversations;
     if (isGroup) {
@@ -84,7 +86,7 @@ router.post('/', async (req, res) => {
 
         let response;
         if (func === 'SEND_MESSAGE') {
-            const message = params.message; // TODO: Put Message into if block
+            const message = params.message;
             response = await postDataRPC(message);
         }
 
