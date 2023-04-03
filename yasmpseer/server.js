@@ -43,7 +43,8 @@ console.log('URL:', jsonServerURL);
 // Use Routes
 app.get('/', (req, res) => {
     res.send(
-        `Hello to YASMP USER server; Currently listening to ${jsonServerURL}`
+        `Hello to YASMP USER server; Currently listening to ${jsonServerURL}.
+        You are currently looking at the server for User ${String(portIndex)}.`
     );
 });
 app.use('/listener', require(`./routes/user${String(portIndex)}`));

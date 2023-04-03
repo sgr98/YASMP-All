@@ -4,6 +4,7 @@ const router = express.Router();
 
 const SELFPORT = '3001';
 const URL = `http://localhost:${SELFPORT}/`;
+const GROUP_CHAT = 'Group_Chat';
 
 const getData = async () => {
     const aboutPath = URL + 'about';
@@ -28,11 +29,15 @@ const getData = async () => {
 };
 
 const postDataRPC = async (message) => {
-    const from = message.from;
+    const { from, to, isGroup } = message;
 
     const userSpace = await getData();
     const userConversations = userSpace.conversations;
-    userConversations[from].push(message);
+    if (isGroup) {
+        userConversations[to].push(message);
+    } else {
+        userConversations[from].push(message);
+    }
 
     try {
         const conversationsPath = URL + 'conversations';
@@ -76,10 +81,10 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { func, params } = req.body;
-        const message = params.message;     // TODO: Put Message into if block
 
         let response;
         if (func === 'SEND_MESSAGE') {
+            const message = params.message; // TODO: Put Message into if block
             response = await postDataRPC(message);
         }
 
