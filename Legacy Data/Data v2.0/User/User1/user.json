@@ -1,0 +1,129 @@
+{
+  "about": {
+    "id": "393a16f8-b5ad-4663-9fe0-983d13f14cf9",
+    "name": "User1",
+    "port": "4001",
+    "ip": "0.0.0.0",
+    "isGroup": false
+  },
+  "contacts": [
+    {
+      "id": "884bb474-9e83-4d3f-a1ec-ecc4155fe342",
+      "name": "User2",
+      "port": "4002",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "196d694a-c9ef-46d1-a15e-95c1d5ea0c1b",
+      "name": "User3",
+      "port": "4003",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "565b463c-8f76-47b2-a3dc-9ada53a17b21",
+      "name": "User4",
+      "port": "4004",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "80f5c50c-033f-4d72-a1aa-88f1c90474a7",
+      "name": "Group_Chat",
+      "port": [
+        "4001",
+        "4002",
+        "4003",
+        "4004"
+      ],
+      "ip": "0.0.0.0",
+      "isGroup": true
+    }
+  ],
+  "conversations": {
+    "User2": [],
+    "User3": [],
+    "User4": [],
+    "Group_Chat": [
+      {
+        "message_id": "f2f1681e-5049-4f8a-8519-b66fd7034c1a",
+        "from": "User1",
+        "to": "Group_Chat",
+        "isGroup": true,
+        "delay": [
+          60000,
+          1000
+        ],
+        "data": {
+          "type": "string",
+          "content": "This is a delayed message"
+        },
+        "datetime_send": "2023-04-04T20:03:00.515Z",
+        "datetime_receive": "2023-04-04T20:03:00.515Z"
+      },
+      {
+        "message_id": "0c01b221-60b7-4153-9d62-6ff516d7749d",
+        "from": "User3",
+        "to": "Group_Chat",
+        "isGroup": true,
+        "delay": [
+          0
+        ],
+        "data": {
+          "type": "string",
+          "content": "I have received the message"
+        },
+        "datetime_send": "2023-04-04T20:03:10.084Z",
+        "datetime_receive": "2023-04-04T20:03:10.162Z"
+      },
+      {
+        "message_id": "507dae4f-2a8d-4bad-b6c1-6c5a31f3212c",
+        "from": "User3",
+        "to": "Group_Chat",
+        "isGroup": true,
+        "delay": [
+          3000
+        ],
+        "data": {
+          "type": "object",
+          "content": {
+            "a": "Here is a delayed response"
+          }
+        },
+        "datetime_send": "2023-04-04T20:03:45.041Z",
+        "datetime_receive": "2023-04-04T20:03:48.234Z"
+      },
+      {
+        "message_id": "2d073321-7268-4b60-9fd5-2eef3673d6bc",
+        "from": "User4",
+        "to": "Group_Chat",
+        "isGroup": true,
+        "delay": [
+          0
+        ],
+        "data": {
+          "type": "string",
+          "content": "I just got the message"
+        },
+        "datetime_send": "2023-04-04T20:04:19.969Z",
+        "datetime_receive": "2023-04-04T20:04:20.040Z"
+      },
+      {
+        "message_id": "a10999b0-be4e-4535-bfb8-ccd5b65128c8",
+        "from": "User2",
+        "to": "Group_Chat",
+        "isGroup": true,
+        "delay": [
+          0
+        ],
+        "data": {
+          "type": "string",
+          "content": "Me too"
+        },
+        "datetime_send": "2023-04-04T20:04:26.756Z",
+        "datetime_receive": "2023-04-04T20:04:26.813Z"
+      }
+    ]
+  }
+}

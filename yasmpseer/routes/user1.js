@@ -2,9 +2,15 @@ const express = require('express');
 const fetch = require('node-fetch');
 const router = express.Router();
 
+const {
+    ORDERING_NO,
+    ORDERING_FIFO,
+    ORDERING_CAUSAL,
+    ORDERING_TOTAL,
+} = require('./../constants.js');
+
 const SELFPORT = '3001';
 const URL = `http://localhost:${SELFPORT}/`;
-const GROUP_CHAT = 'Group_Chat';
 
 const getData = async () => {
     const aboutPath = URL + 'about';
@@ -36,7 +42,12 @@ const postDataRPC = async (message) => {
     const userSpace = await getData();
     const userConversations = userSpace.conversations;
     if (isGroup) {
-        userConversations[to].push(message);
+        // if (ordering === ORDERING_NO) {
+        // } else if (ordering === ORDERING_FIFO) {
+        // } else if (ordering === ORDERING_CAUSAL) {
+        // } else if (ordering === ORDERING_TOTAL) {
+        // }
+        userConversations[to][ORDERING_NO].data.push(message);
     } else {
         userConversations[from].push(message);
     }
