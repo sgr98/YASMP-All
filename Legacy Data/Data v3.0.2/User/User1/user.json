@@ -1,0 +1,971 @@
+{
+  "about": {
+    "id": "80fd610b-d348-4a1e-ab9f-115fe5a6ba2a",
+    "name": "User1",
+    "port": "4001",
+    "ip": "0.0.0.0",
+    "isGroup": false
+  },
+  "contacts": [
+    {
+      "id": "22d15ad0-4db3-4ece-954d-ed5f5c312763",
+      "name": "User2",
+      "port": "4002",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "d967d54f-cb08-4da8-8b61-67728dbdf7ed",
+      "name": "User3",
+      "port": "4003",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "1260300a-a2b7-4553-8266-56626d624608",
+      "name": "User4",
+      "port": "4004",
+      "ip": "0.0.0.0",
+      "isGroup": false
+    },
+    {
+      "id": "d2b9bee8-fa93-494f-b166-6b5999542be5",
+      "name": "Group_Chat",
+      "port": [
+        "4001",
+        "4002",
+        "4003",
+        "4004"
+      ],
+      "ip": "0.0.0.0",
+      "isGroup": true
+    }
+  ],
+  "conversations": {
+    "User2": [
+      {
+        "message_id": "a209a0c5-dc18-403b-ab6f-cc53913cf2f4",
+        "from": "User1",
+        "to": "User2",
+        "isGroup": false,
+        "delay": [
+          0
+        ],
+        "data": {
+          "type": "string",
+          "content": "Hello"
+        },
+        "datetime_send": "2023-04-15T13:26:55.143Z",
+        "datetime_receive": "2023-04-15T13:26:55.143Z"
+      },
+      {
+        "message_id": "8445c32a-f4e6-47e3-beaf-10e9f6806675",
+        "from": "User1",
+        "to": "User2",
+        "isGroup": false,
+        "delay": [
+          0
+        ],
+        "data": {
+          "type": "string",
+          "content": "Hi"
+        },
+        "datetime_send": "2023-04-15T13:26:57.099Z",
+        "datetime_receive": "2023-04-15T13:26:57.099Z"
+      }
+    ],
+    "User3": [],
+    "User4": [],
+    "Group_Chat": {
+      "no": {
+        "data": [
+          {
+            "message_id": "23ea796b-4570-4a62-bdd3-b35ae1365170",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              0
+            ],
+            "data": {
+              "type": "string",
+              "content": "1"
+            },
+            "datetime_send": "2023-04-15T13:06:26.449Z",
+            "datetime_receive": "2023-04-15T13:06:26.449Z",
+            "vectorClock": {
+              "fifo": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "b5a6b803-025c-4f9c-8957-95a494b9f7d5",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100
+            ],
+            "data": {
+              "type": "string",
+              "content": "2"
+            },
+            "datetime_send": "2023-04-15T13:09:47.152Z",
+            "datetime_receive": "2023-04-15T13:09:47.152Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "779f84bc-f193-4620-a047-83d50756ab7d",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "3"
+            },
+            "datetime_send": "2023-04-15T13:10:01.420Z",
+            "datetime_receive": "2023-04-15T13:10:02.490Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "34850039-f20b-4a89-8ffb-2bd271c29ebf",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100,
+              10000
+            ],
+            "data": {
+              "type": "string",
+              "content": "4"
+            },
+            "datetime_send": "2023-04-15T13:18:42.833Z",
+            "datetime_receive": "2023-04-15T13:18:42.833Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "50dab4dd-48a2-4b78-ae10-121b3fe2046a",
+            "from": "User4",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "6"
+            },
+            "datetime_send": "2023-04-15T13:19:25.724Z",
+            "datetime_receive": "2023-04-15T13:19:26.934Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "a00d49a3-38a4-4b77-8d6c-00a2d27552a3",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              70100
+            ],
+            "data": {
+              "type": "string",
+              "content": "5"
+            },
+            "datetime_send": "2023-04-15T13:18:56.980Z",
+            "datetime_receive": "2023-04-15T13:20:07.932Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      "fifo": {
+        "data": [
+          {
+            "message_id": "23ea796b-4570-4a62-bdd3-b35ae1365170",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              0
+            ],
+            "data": {
+              "type": "string",
+              "content": "1"
+            },
+            "datetime_send": "2023-04-15T13:06:26.449Z",
+            "datetime_receive": "2023-04-15T13:06:26.449Z",
+            "vectorClock": {
+              "fifo": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "b5a6b803-025c-4f9c-8957-95a494b9f7d5",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100
+            ],
+            "data": {
+              "type": "string",
+              "content": "2"
+            },
+            "datetime_send": "2023-04-15T13:09:47.152Z",
+            "datetime_receive": "2023-04-15T13:09:47.152Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "779f84bc-f193-4620-a047-83d50756ab7d",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "3"
+            },
+            "datetime_send": "2023-04-15T13:10:01.420Z",
+            "datetime_receive": "2023-04-15T13:10:02.490Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "34850039-f20b-4a89-8ffb-2bd271c29ebf",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100,
+              10000
+            ],
+            "data": {
+              "type": "string",
+              "content": "4"
+            },
+            "datetime_send": "2023-04-15T13:18:42.833Z",
+            "datetime_receive": "2023-04-15T13:18:42.833Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "50dab4dd-48a2-4b78-ae10-121b3fe2046a",
+            "from": "User4",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "6"
+            },
+            "datetime_send": "2023-04-15T13:19:25.724Z",
+            "datetime_receive": "2023-04-15T13:19:26.934Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "a00d49a3-38a4-4b77-8d6c-00a2d27552a3",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              70100
+            ],
+            "data": {
+              "type": "string",
+              "content": "5"
+            },
+            "datetime_send": "2023-04-15T13:18:56.980Z",
+            "datetime_receive": "2023-04-15T13:20:07.932Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ],
+        "buffer": [],
+        "vectorClock": [
+          3,
+          0,
+          2,
+          1
+        ]
+      },
+      "causal": {
+        "data": [
+          {
+            "message_id": "23ea796b-4570-4a62-bdd3-b35ae1365170",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              0
+            ],
+            "data": {
+              "type": "string",
+              "content": "1"
+            },
+            "datetime_send": "2023-04-15T13:06:26.449Z",
+            "datetime_receive": "2023-04-15T13:06:26.449Z",
+            "vectorClock": {
+              "fifo": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "b5a6b803-025c-4f9c-8957-95a494b9f7d5",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100
+            ],
+            "data": {
+              "type": "string",
+              "content": "2"
+            },
+            "datetime_send": "2023-04-15T13:09:47.152Z",
+            "datetime_receive": "2023-04-15T13:09:47.152Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "779f84bc-f193-4620-a047-83d50756ab7d",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "3"
+            },
+            "datetime_send": "2023-04-15T13:10:01.420Z",
+            "datetime_receive": "2023-04-15T13:10:02.490Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "34850039-f20b-4a89-8ffb-2bd271c29ebf",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100,
+              10000
+            ],
+            "data": {
+              "type": "string",
+              "content": "4"
+            },
+            "datetime_send": "2023-04-15T13:18:42.833Z",
+            "datetime_receive": "2023-04-15T13:18:42.833Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "50dab4dd-48a2-4b78-ae10-121b3fe2046a",
+            "from": "User4",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "6"
+            },
+            "datetime_send": "2023-04-15T13:19:25.724Z",
+            "datetime_receive": "2023-04-15T13:19:26.934Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "a00d49a3-38a4-4b77-8d6c-00a2d27552a3",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              70100
+            ],
+            "data": {
+              "type": "string",
+              "content": "5"
+            },
+            "datetime_send": "2023-04-15T13:18:56.980Z",
+            "datetime_receive": "2023-04-15T13:20:07.932Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ],
+        "buffer": [],
+        "vectorClock": [
+          3,
+          0,
+          2,
+          1
+        ]
+      },
+      "total": {
+        "data": [
+          {
+            "message_id": "23ea796b-4570-4a62-bdd3-b35ae1365170",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              0
+            ],
+            "data": {
+              "type": "string",
+              "content": "1"
+            },
+            "datetime_send": "2023-04-15T13:06:26.449Z",
+            "datetime_receive": "2023-04-15T13:06:26.449Z",
+            "vectorClock": {
+              "fifo": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "b5a6b803-025c-4f9c-8957-95a494b9f7d5",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100
+            ],
+            "data": {
+              "type": "string",
+              "content": "2"
+            },
+            "datetime_send": "2023-04-15T13:09:47.152Z",
+            "datetime_receive": "2023-04-15T13:09:47.152Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                0,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "779f84bc-f193-4620-a047-83d50756ab7d",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "3"
+            },
+            "datetime_send": "2023-04-15T13:10:01.420Z",
+            "datetime_receive": "2023-04-15T13:10:02.490Z",
+            "vectorClock": {
+              "fifo": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "34850039-f20b-4a89-8ffb-2bd271c29ebf",
+            "from": "User1",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              60000,
+              100,
+              10000
+            ],
+            "data": {
+              "type": "string",
+              "content": "4"
+            },
+            "datetime_send": "2023-04-15T13:18:42.833Z",
+            "datetime_receive": "2023-04-15T13:18:42.833Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "50dab4dd-48a2-4b78-ae10-121b3fe2046a",
+            "from": "User4",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              1000
+            ],
+            "data": {
+              "type": "string",
+              "content": "6"
+            },
+            "datetime_send": "2023-04-15T13:19:25.724Z",
+            "datetime_receive": "2023-04-15T13:19:26.934Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "causal": [
+                3,
+                0,
+                1,
+                1
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "message_id": "a00d49a3-38a4-4b77-8d6c-00a2d27552a3",
+            "from": "User3",
+            "to": "Group_Chat",
+            "isGroup": true,
+            "delay": [
+              70100
+            ],
+            "data": {
+              "type": "string",
+              "content": "5"
+            },
+            "datetime_send": "2023-04-15T13:18:56.980Z",
+            "datetime_receive": "2023-04-15T13:20:07.932Z",
+            "vectorClock": {
+              "fifo": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "causal": [
+                3,
+                0,
+                2,
+                0
+              ],
+              "total": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ],
+        "buffer": [],
+        "vectorClock": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  }
+}
