@@ -8,6 +8,7 @@ const {
     ORDERING_CAUSAL,
     ORDERING_TOTAL,
 } = require('./../constants.js');
+const { resolveFIFO, resolveCausal, resolveTotal } = require('./ordering.js');
 
 const SELFPORT = '3002';
 const URL = `http://localhost:${SELFPORT}/`;
@@ -41,15 +42,29 @@ const postDataRPC = async (message) => {
 
     const userSpace = await getData();
     const userConversations = userSpace.conversations;
-    if (isGroup) {
-        // if (ordering === ORDERING_NO) {
-        // } else if (ordering === ORDERING_FIFO) {
-        // } else if (ordering === ORDERING_CAUSAL) {
-        // } else if (ordering === ORDERING_TOTAL) {
-        // }
-        userConversations[to][ORDERING_NO].data.push(message);
-    } else {
+    if (!isGroup) {
         userConversations[from].push(message);
+    } else {
+        // No Order
+        userConversations[to][ORDERING_NO].data.push(message);
+
+        // FIFO
+        userConversations[to][ORDERING_FIFO] = resolveFIFO(
+            userConversations[to][ORDERING_FIFO],
+            message
+        );
+
+        // Causal
+        userConversations[to][ORDERING_CAUSAL] = resolveCausal(
+            userConversations[to][ORDERING_CAUSAL],
+            message
+        );
+
+        // Total
+        userConversations[to][ORDERING_TOTAL] = resolveTotal(
+            userConversations[to][ORDERING_TOTAL],
+            message
+        );
     }
 
     try {

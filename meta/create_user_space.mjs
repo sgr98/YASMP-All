@@ -61,7 +61,19 @@ const containsUserSpace = (existingConvos, user_name) => {
     });
 };
 
-const getDefaultGroupConversationObject = () => {
+const getNumUsers = (contactList) => {
+    let nContacts = 0;
+    contactList.forEach((val, ind, arr) => {
+        if (!val.isGroup) nContacts += 1;
+    });
+    return nContacts + 1;
+};
+
+const getDefaultGroupConversationObject = (contactList) => {
+    const nUsers = getNumUsers(contactList);
+    let defaultVectorClock = [];
+    for (let i = 0; i < nUsers; i++) defaultVectorClock.push(0);
+
     let defaultGroupConversations = {};
     defaultGroupConversations[ORDERING_NO] = {
         data: [],
@@ -69,21 +81,24 @@ const getDefaultGroupConversationObject = () => {
     defaultGroupConversations[ORDERING_FIFO] = {
         data: [],
         buffer: [],
-        vectorClock: [],
+        vectorClock: defaultVectorClock,
     };
     defaultGroupConversations[ORDERING_CAUSAL] = {
         data: [],
         buffer: [],
-        vectorClock: [],
+        vectorClock: defaultVectorClock,
     };
     defaultGroupConversations[ORDERING_TOTAL] = {
         data: [],
+        buffer: [],
+        vectorClock: defaultVectorClock,
     };
     return defaultGroupConversations;
 };
 
 const createUserSpace = (user, contactList, existingUserSpace) => {
-    let defaultGroupConversations = getDefaultGroupConversationObject();
+    let defaultGroupConversations =
+        getDefaultGroupConversationObject(contactList);
 
     if (existingUserSpace === undefined)
         existingUserSpace = { conversations: {} };
@@ -98,10 +113,8 @@ const createUserSpace = (user, contactList, existingUserSpace) => {
     contactList.forEach((val, ind, arr) => {
         const { name, isGroup } = val;
         if (!containsUserSpace(existingConvoNames, name)) {
-            if (!isGroup)
-                userSpace.conversations[name] = [];
-            else
-                userSpace.conversations[name] = defaultGroupConversations;
+            if (!isGroup) userSpace.conversations[name] = [];
+            else userSpace.conversations[name] = defaultGroupConversations;
         }
     });
 

@@ -73,3 +73,13 @@ export const getContactsList = async (user_name, path) => {
     });
     return contactList;
 };
+
+export const getNumUsers = async (path) => {
+    let nUsers = 0;
+    const allUsers = await readUsers(path);
+    allUsers.forEach((val, ind, arr) => {
+        if (!val.isGroup)
+            nUsers += 1;
+    });
+    return nUsers;
+}

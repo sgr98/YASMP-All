@@ -18,6 +18,13 @@ const getSendURL = (domain, port, options = []) => {
     return url;
 };
 
+const getUserIndex = (userName) => {
+    const digits = new RegExp('[0-9]+', 'g');
+    const userInd = userName.match(digits);
+    return parseInt(userInd[0])
+};
+
 exports.getPortIndex = getPortIndex;
 exports.getJsonPort = getJsonPort;
 exports.getSendURL = getSendURL;
+exports.getUserIndex = getUserIndex;
