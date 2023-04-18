@@ -85,9 +85,9 @@ const addScripts = (extractedPackage, users) => {
 const addScriptsServer = (extractedPackage, users) => {
     let { scripts } = extractedPackage;
 
-    // "totaljson": "json-server --watch ./Data/total_sequence.json --port 6000",
+    // "totaljson": "json-server --watch ./Data/total_sequence.json --port 8000",
     scripts['totaljson'] =
-        'json-server --watch ./Data/total_sequence.json --port 6000';
+        'json-server --watch ./Data/total_sequence.json --port 8000';
 
     users.forEach((user, ind, arr) => {
         if (!user.isGroup) {

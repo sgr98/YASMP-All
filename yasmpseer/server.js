@@ -51,8 +51,11 @@ app.get('/', (req, res) => {
 app.use('/listener', require(`./routes/user${String(portIndex)}`));
 
 // TODO: Inside the routes/total.js file
-const leaderInd = getJsonPort(LEADER_INDEX, mul=5);
-if (port === leaderInd) app.use('/sequencer', require(`./routes/total`));
+const leaderInd = parseInt(getJsonPort(LEADER_INDEX, mul = 5));
+if (port === leaderInd) {
+    console.log("Leader API Handler attached")
+    app.use('/sequencer', require(`./routes/total`));
+}
 
 app.listen(port, () =>
     console.log(

@@ -7,12 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js 5001",
         "server": "nodemon server.js 5001",
-        "totaljson": "json-server --watch ./Data/total_sequence.json --port 6000",
+        "totaljson": "json-server --watch ./Data/total_sequence.json --port 8000",
         "u1server": "nodemon server.js 5001",
         "u2server": "nodemon server.js 5002",
         "u3server": "nodemon server.js 5003",
         "u4server": "nodemon server.js 5004",
-        "uconc": "concurrently \"npm run totaljson\" \"npm run u1server\" \"npm run u2server\" \"npm run u3server\" \"npm run u4server\""
+        "uconc": "concurrently \"npm run totaljson\" \"npm run u1server\" \"npm run u2server\" \"npm run u3server\" \"npm run u4server\"",
+        "u1total": "concurrently \"npm run totaljson\" \"npm run u1server\""
     },
     "keywords": [],
     "author": "",
