@@ -2,6 +2,8 @@ const {
     ORDERING_FIFO,
     ORDERING_CAUSAL,
     ORDERING_TOTAL,
+    ORDERING_TF,
+    ORDERING_TC,
 } = require('./../constants.js');
 const { getUserIndex } = require('./../utils.js');
 
@@ -24,7 +26,9 @@ const conditionCausal = (ind, vClockUser, vClockMessage) => {
     return cond1 && cond2;
 };
 
-const conditionTotal = (ind, vClockUser, vClockMessage) => {};
+const conditionTotal = (sequenceUser, sequenceMessage) => {
+    return sequenceMessage === sequenceUser + 1;
+};
 
 // Any order (User.Conversations)
 // {
@@ -102,7 +106,19 @@ const resolveCausal = (conversations, message) => {
     return conversations;
 };
 
+// TODO: Total Ordering (all below)
+
 const resolveTotal = (conversations, message) => {
+    conversations.data.push(message);
+    return conversations;
+};
+
+const resolveTotalFIFO = (conversations, message) => {
+    conversations.data.push(message);
+    return conversations;
+};
+
+const resolveTotalCausal = (conversations, message) => {
     conversations.data.push(message);
     return conversations;
 };
@@ -111,4 +127,6 @@ module.exports = {
     resolveFIFO,
     resolveCausal,
     resolveTotal,
+    resolveTotalFIFO,
+    resolveTotalCausal,
 };

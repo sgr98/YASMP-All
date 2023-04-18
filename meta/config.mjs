@@ -30,8 +30,9 @@ export const SAVE_DIR_DATA = '../yasmp/src/Data/';
 export const SAVE_DIR_REGISTRY = '../yasmp/src/Data/Registry/';
 export const SAVE_REGISTRY_FILE = 'users.json';
 export const SAVE_DIR_USER = '../yasmp/src/Data/User/';
-export const SAVE_PACKAGE = "../yasmp/package.json";
+export const SAVE_PACKAGE = '../yasmp/package.json';
 
 export const SAVE_SERVER_DATA = '../yasmpseer/Data/';
 export const SAVE_SERVER_DATA_REGISTRY = '../yasmpseer/Data/Registry/';
-export const SAVE_SERVER_PACKAGE = "../yasmpseer/package.json";
+export const SAVE_SERVER_PACKAGE = '../yasmpseer/package.json';
+export const SAVE_SERVER_TOTAL_SEQUENCE = '../yasmpseer/Data/total_sequence.json';

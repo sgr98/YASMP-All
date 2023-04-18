@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { getPortIndex, getJsonPort, getSendURL } = require('./utils');
+const { LEADER_INDEX } = require('./constants');
 
 const app = express();
 
@@ -48,6 +49,10 @@ app.get('/', (req, res) => {
     );
 });
 app.use('/listener', require(`./routes/user${String(portIndex)}`));
+
+// TODO: Inside the routes/total.js file
+const leaderInd = getJsonPort(LEADER_INDEX, mul=5);
+if (port === leaderInd) app.use('/sequencer', require(`./routes/total`));
 
 app.listen(port, () =>
     console.log(

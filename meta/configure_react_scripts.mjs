@@ -46,7 +46,8 @@ const addScripts = (extractedPackage, users) => {
 
             // "u1start": "set PORT=4001 && react-scripts start",
             const userStr = 'u' + (ind + 1) + 'start';
-            const userScript = 'set PORT=' + user.port + ' && react-scripts start';
+            const userScript =
+                'set PORT=' + user.port + ' && react-scripts start';
             scripts[userStr] = userScript;
 
             // "u1webstart": "webpack-dev-server --mode development --port 5001"
@@ -83,6 +84,11 @@ const addScripts = (extractedPackage, users) => {
 
 const addScriptsServer = (extractedPackage, users) => {
     let { scripts } = extractedPackage;
+
+    // "totaljson": "json-server --watch ./Data/total_sequence.json --port 6000",
+    scripts['totaljson'] =
+        'json-server --watch ./Data/total_sequence.json --port 6000';
+
     users.forEach((user, ind, arr) => {
         if (!user.isGroup) {
             // "u1server": "nodemon server.js 5001",
@@ -94,7 +100,7 @@ const addScriptsServer = (extractedPackage, users) => {
 
     // "uconc": "concurrently \"npm run u1server\" \"npm run u2server\" ..."
     const userConcurrentStr = 'uconc';
-    let userConcurrentScript = 'concurrently ';
+    let userConcurrentScript = 'concurrently "npm run totaljson" ';
     for (let i = 0; i < users.length; i++) {
         if (!users[i].isGroup)
             userConcurrentScript += '"npm run u' + (i + 1) + 'server" ';

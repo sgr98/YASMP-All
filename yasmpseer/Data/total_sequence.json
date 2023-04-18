@@ -1,0 +1,7 @@
+{
+    "sequencer": {
+        "total": { "sequence": 0, "buffer": [] },
+        "total_fifo": { "sequence": 0, "buffer": [] },
+        "total_causal": { "sequence": 0, "buffer": [] }
+    }
+}

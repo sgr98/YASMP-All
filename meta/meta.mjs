@@ -8,12 +8,13 @@ import {
     SAVE_SERVER_DATA,
     SAVE_SERVER_DATA_REGISTRY,
     SAVE_SERVER_PACKAGE,
+    SAVE_SERVER_TOTAL_SEQUENCE,
 } from './config.mjs';
-import { addUsers } from './create_user.mjs';
+import { addUsers, getTotalSequence, saveJSONFile } from './create_user.mjs';
 import { createDir, addUserSpace } from './create_user_space.mjs';
 import { addScriptsSavePackage } from './configure_react_scripts.mjs';
 
-const createMetaSpace = async (type='') => {
+const createMetaSpace = async (type = '') => {
     if (type === '') {
         //  ////////////////////////////////
         //  FOR YASMP
@@ -47,8 +48,7 @@ const createMetaSpace = async (type='') => {
         console.log('PACKAGE JSON UPDATE');
         await addScriptsSavePackage(USERS, SAVE_PACKAGE);
         console.log('PACKAGE JSON UPDATE COMPLETED');
-    }
-    else if (type === 'server') {
+    } else if (type === 'server') {
         //  ////////////////////////////////
         //  FOR YASMP server
         //  ////////////////////////////////
@@ -60,8 +60,17 @@ const createMetaSpace = async (type='') => {
         await addUsers(USERS, server_path);
         console.log('(SERVER) REGISTRY CREATED');
 
+        console.log('(SERVER) TOTAL SEQUENCE CREATION STARTED');
+        const totalSequenceObj = getTotalSequence();
+        await saveJSONFile(totalSequenceObj, SAVE_SERVER_TOTAL_SEQUENCE);
+        console.log('(SERVER) TOTAL SEQUENCE CREATED');
+
         console.log('(SERVER) PACKAGE JSON UPDATE');
-        await addScriptsSavePackage(USERS, SAVE_SERVER_PACKAGE, type='server');
+        await addScriptsSavePackage(
+            USERS,
+            SAVE_SERVER_PACKAGE,
+            (type = 'server')
+        );
         console.log('(SERVER) PACKAGE JSON UPDATE COMPLETED');
     }
 };

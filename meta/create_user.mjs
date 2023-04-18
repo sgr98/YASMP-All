@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs/promises';
+import { ORDERING_TOTAL, ORDERING_TF, ORDERING_TC } from './constants.mjs';
 
 const readUsers = async (path) => {
     let users = [];
@@ -8,10 +9,9 @@ const readUsers = async (path) => {
         users = JSON.parse(data.toString());
         console.log('Users are successfully read');
     } catch (err) {
-        if (err.code === "ENOENT")
-            console.error("ERROR READING: File does not exists:", path);
-        else
-            console.error('ERROR READING: Error reading file\n', err);
+        if (err.code === 'ENOENT')
+            console.error('ERROR READING: File does not exists:', path);
+        else console.error('ERROR READING: Error reading file\n', err);
     }
     return users;
 };
@@ -78,8 +78,36 @@ export const getNumUsers = async (path) => {
     let nUsers = 0;
     const allUsers = await readUsers(path);
     allUsers.forEach((val, ind, arr) => {
-        if (!val.isGroup)
-            nUsers += 1;
+        if (!val.isGroup) nUsers += 1;
     });
     return nUsers;
-}
+};
+
+export const getTotalSequence = () => {
+    const totalSequenceObj = {
+        sequencer: {},
+    };
+    totalSequenceObj.sequencer[ORDERING_TOTAL] = {
+        sequence: 0,
+        buffer: [],
+    };
+    totalSequenceObj.sequencer[ORDERING_TF] = {
+        sequence: 0,
+        buffer: [],
+    };
+    totalSequenceObj.sequencer[ORDERING_TC] = {
+        sequence: 0,
+        buffer: [],
+    };
+    return totalSequenceObj;
+};
+
+export const saveJSONFile = async (obj, path) => {
+    const data = JSON.stringify(obj);
+    try {
+        await fs.writeFile(path, data);
+        console.log('File successfully written');
+    } catch (error) {
+        console.error('ERROR WRITING: Error writing file\n', error);
+    }
+};

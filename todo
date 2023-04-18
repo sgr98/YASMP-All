@@ -1,3 +1,2 @@
-1. Modify user json to accomadate for different orderings. (Design and implement)
-2. Change frontend according to the new user json.
-3. Modify API in seer for orderings.
+1. Added functionality for Total Ordering.
+    1. 

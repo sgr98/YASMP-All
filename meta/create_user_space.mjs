@@ -7,6 +7,8 @@ import {
     ORDERING_FIFO,
     ORDERING_CAUSAL,
     ORDERING_TOTAL,
+    ORDERING_TF,
+    ORDERING_TC,
 } from './constants.mjs';
 
 const saveUserFile = async (obj, path, type) => {
@@ -91,7 +93,23 @@ const getDefaultGroupConversationObject = (contactList) => {
     defaultGroupConversations[ORDERING_TOTAL] = {
         data: [],
         buffer: [],
+        sequence_buffer: [],
         vectorClock: defaultVectorClock,
+        sequence: 0,
+    };
+    defaultGroupConversations[ORDERING_TF] = {
+        data: [],
+        buffer: [],
+        sequence_buffer: [],
+        vectorClock: defaultVectorClock,
+        sequence: 0,
+    };
+    defaultGroupConversations[ORDERING_TC] = {
+        data: [],
+        buffer: [],
+        sequence_buffer: [],
+        vectorClock: defaultVectorClock,
+        sequence: 0,
     };
     return defaultGroupConversations;
 };

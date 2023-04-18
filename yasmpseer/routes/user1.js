@@ -7,8 +7,16 @@ const {
     ORDERING_FIFO,
     ORDERING_CAUSAL,
     ORDERING_TOTAL,
+    ORDERING_TF,
+    ORDERING_TC,
 } = require('./../constants.js');
-const { resolveFIFO, resolveCausal, resolveTotal } = require('./ordering.js');
+const {
+    resolveFIFO,
+    resolveCausal,
+    resolveTotal,
+    resolveTotalFIFO,
+    resolveTotalCausal,
+} = require('./ordering.js');
 
 const SELFPORT = '3001';
 const URL = `http://localhost:${SELFPORT}/`;
@@ -63,6 +71,18 @@ const postDataRPC = async (message) => {
         // Total
         userConversations[to][ORDERING_TOTAL] = resolveTotal(
             userConversations[to][ORDERING_TOTAL],
+            message
+        );
+
+        // Total FIFO
+        userConversations[to][ORDERING_TF] = resolveTotalFIFO(
+            userConversations[to][ORDERING_TF],
+            message
+        );
+
+        // Total Causal
+        userConversations[to][ORDERING_TC] = resolveTotalCausal(
+            userConversations[to][ORDERING_TC],
             message
         );
     }
