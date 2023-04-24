@@ -61,7 +61,7 @@ const createMetaSpace = async (type = '') => {
         console.log('(SERVER) REGISTRY CREATED');
 
         console.log('(SERVER) TOTAL SEQUENCE CREATION STARTED');
-        const totalSequenceObj = getTotalSequence();
+        const totalSequenceObj = getTotalSequence(SAVE_DIR_REGISTRY + SAVE_REGISTRY_FILE);
         await saveJSONFile(totalSequenceObj, SAVE_SERVER_TOTAL_SEQUENCE);
         console.log('(SERVER) TOTAL SEQUENCE CREATED');
 

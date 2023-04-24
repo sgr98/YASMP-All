@@ -83,21 +83,28 @@ export const getNumUsers = async (path) => {
     return nUsers;
 };
 
-export const getTotalSequence = () => {
+export const getTotalSequence = (users_path) => {
+    const nUsers = getNumUsers(users_path)
+    let defaultVectorClock = [];
+    for (let i = 0; i < nUsers; i++) defaultVectorClock.push(0);
+
     const totalSequenceObj = {
         sequencer: {},
     };
     totalSequenceObj.sequencer[ORDERING_TOTAL] = {
         sequence: 0,
         buffer: [],
+        vectorClock: defaultVectorClock,
     };
     totalSequenceObj.sequencer[ORDERING_TF] = {
         sequence: 0,
         buffer: [],
+        vectorClock: defaultVectorClock,
     };
     totalSequenceObj.sequencer[ORDERING_TC] = {
         sequence: 0,
         buffer: [],
+        vectorClock: defaultVectorClock,
     };
     return totalSequenceObj;
 };
